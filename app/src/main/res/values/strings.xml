@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">YLN-Lays</string>
+    <string name="Myproject">My Project</string>
+    <string name="Description">
+        Lay’s Wavy Rasa Daging Sapi Bakar merupakan
+        keripik kentang bergelombang dengan tekstur
+        renyah dan cita rasa gurih khas daging sapi
+        bakar. Cocok dinikmati sebagai camilan saat
+        bersantai, belajar, menonton, maupun
+        berkumpul bersama teman.
+    </string>
+
+    <string name="Komposisi">
+        Kentang, minyak kelapa sawit, bumbu rasa
+        (mengandung penguat rasa mononatrium glutamat,
+        dinatrium inosinat, dan dinatrium guanilat),
+        serta antioksidan TBHQ.
+    </string>
+
+    <string name="NilaiGizi">
+        Nilai Gizi per Sajian (20 g):
+        \nEnergi Total: 100 kkal
+        \nEnergi dari Lemak: 50 kkal
+        \nLemak Total: 6 g
+        \nLemak Jenuh: 2,5 g
+        \nProtein: 2 g
+        \nKarbohidrat Total: 11 g
+        \nSerat Pangan: 1 g
+        \nGula: 0 g
+        \nGaram (Natrium): 80 mg
+    </string>
+</resources>
