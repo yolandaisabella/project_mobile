@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permission untuk mengakses internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,25 +15,62 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.YLNLays">
+
+        <!-- Halaman WebView -->
         <activity
-            android:name=".MainActivity"
+            android:name=".project_yolan_3tie.WebViewActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize">
-        </activity>
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Dashboard -->
+        <activity
+            android:name=".project_yolan_3tie.DashboardActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Sign Up -->
+        <activity
+            android:name=".project_yolan_3tie.SignUpActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Sign In -->
+        <activity
+            android:name=".project_yolan_3tie.SignInActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Get Started -->
+        <activity
+            android:name=".project_yolan_3tie.GetStartedActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Activity dari Pertemuan 3 -->
+        <activity
+            android:name=".Pertemuan_3.ThirdResultActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".Pertemuan_3.ThirdActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Halaman awal Cafe Jambang -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity
-            android:name=".Pertemuan_3.ThirdResultActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize" />
+
     </application>
 
 </manifest>
