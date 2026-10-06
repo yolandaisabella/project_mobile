@@ -34,7 +34,6 @@ class SignInActivity : AppCompatActivity() {
                 binding.etUsername.error = "Username harus diisi"
                 return@setOnClickListener
             }
-
             if (password.isEmpty()) {
                 binding.etPassword.error = "Password harus diisi"
                 return@setOnClickListener
