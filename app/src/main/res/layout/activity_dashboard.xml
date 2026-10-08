@@ -1,25 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F6F2ED">
+    android:background="#F6F2ED"
+    tools:context=".project_yolan_3tie.DashboardActivity">
 
-    <ImageButton
-        android:id="@+id/btnBack"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="64dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="Back"
-        android:src="@drawable/ic_arrow_back"
-        app:layout_constraintStart_toStartOf="parent"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#4B2C20"
+        android:elevation="5dp"
+        app:title="Cafe Jambang"
+        app:titleTextColor="#F6F2ED"
+        app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="#4B2C20" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <ImageView
+            android:id="@+id/btnDeveloperProfile"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/bg_profile_circle"
+            android:clipToOutline="true"
+            android:contentDescription="Developer Profile"
+            android:padding="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile" />
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="108dp"
+        android:contentDescription="Logo Cafe Jambang"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="Hi, Welcome!"
+        android:textColor="#4B2C20"
+        android:textSize="27sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo" />
+
+
+    <!-- SUBTITLE -->
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="Selamat datang di Cafe Jambang"
+        android:textColor="#A67C52"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvWelcome" />
+
+
+    <!-- CARD WEBSITE -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardWebsite"
         android:layout_width="0dp"
@@ -31,7 +97,6 @@
         app:cardCornerRadius="22dp"
         app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
 
@@ -56,8 +121,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
-                android:text="Kunjungi website kami untuk melihat
-                informasi dan layanan Cafe Jambang."
+                android:text="Kunjungi website kami untuk melihat&#10;informasi dan layanan Cafe Jambang."
                 android:textColor="#A67C52"
                 android:textSize="12sp" />
 
@@ -72,54 +136,9 @@
                 android:textAllCaps="false"
                 android:textColor="#F6F2ED"
                 android:textSize="14sp" />
+
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/tvWelcome"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="30dp"
-        android:fontFamily="@font/poppins_bold"
-        android:gravity="center"
-        android:text="Hi, Welcome!"
-        android:textColor="#4B2C20"
-        android:textSize="27sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgLogo" />
-
-    <TextView
-        android:id="@+id/tvSubtitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="30dp"
-        android:fontFamily="@font/poppins_medium"
-        android:gravity="center"
-        android:text="Selamat datang di Cafe Jambang"
-        android:textColor="#A67C52"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvWelcome" />
-
-    <ImageView
-        android:id="@+id/imgLogo"
-        android:layout_width="85dp"
-        android:layout_height="85dp"
-        android:layout_marginTop="108dp"
-        android:contentDescription="Logo Cafe Jambang"
-        android:scaleType="fitCenter"
-        android:src="@drawable/logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

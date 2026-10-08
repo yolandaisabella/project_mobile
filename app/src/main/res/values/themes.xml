@@ -6,4 +6,11 @@
     </style>
 
     <style name="Theme.YLNLays" parent="Base.Theme.YLNLays" />
+
+    <style name="CafeJambangPopupMenu" parent="Widget.MaterialComponents.PopupMenu">
+        <item name="android:popupBackground">#F6F2ED</item>
+        <item name="android:textColor">#4B2C20</item>
+    </style>
+
+
 </resources>

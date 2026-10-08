@@ -1,13 +1,11 @@
 package com.example.yln_lays.project_yolan_3tie
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import android.view.MenuItem
 import android.webkit.WebViewClient
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.yln_lays.R
 import com.example.yln_lays.databinding.ActivityWebViewBinding
 
@@ -17,21 +15,15 @@ class WebViewActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
+        // Warna status bar sama dengan toolbar
+        window.statusBarColor = Color.parseColor("#4B2C20")
+
+        // Icon status bar menjadi putih
+        window.decorView.systemUiVisibility = 0
 
         binding = ActivityWebViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(
-                systemBars.left,
-                systemBars.top,
-                systemBars.right,
-                systemBars.bottom
-            )
-            insets
-        }
 
         // Mengaktifkan toolbar
         setSupportActionBar(binding.toolbar)
@@ -60,17 +52,20 @@ class WebViewActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+
             android.R.id.home -> {
                 onBackPressedDispatcher.onBackPressed()
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
     }
 
-    // Mengaktifkan tombol back pada toolbar
+    // Tombol back
     @SuppressLint("GestureBackNavigation")
     override fun onBackPressed() {
+
         if (binding.webView.canGoBack()) {
             binding.webView.goBack()
         } else {

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash_screen"
+    tools:context=".SplashScreenActivity">
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="155dp"
+        android:layout_height="155dp"
+        android:src="@drawable/logo"
+        android:scaleType="fitCenter"
+        android:contentDescription="Logo Cafe Jambang"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cafe Jambang"
+        android:textColor="#4B2C20"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo"
+        app:layout_constraintBottom_toTopOf="@id/viewLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:layout_marginBottom="15dp" />
+
+
+    <!-- ========================= -->
+    <!-- GARIS -->
+    <!-- ========================= -->
+
+    <View
+        android:id="@+id/viewLine"
+        android:layout_width="45dp"
+        android:layout_height="2dp"
+        android:background="#A67C52"
+
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintBottom_toTopOf="@id/tvTagline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/tvTagline"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:text="Lebih dari sekadar kopi,&#10;ini tentang rasa dan cerita."
+        android:textColor="#8A6A52"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:lineSpacingExtra="5dp"
+
+        app:layout_constraintTop_toBottomOf="@id/viewLine"
+        app:layout_constraintBottom_toTopOf="@id/tvBottomText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:layout_marginBottom="95dp" />
+
+
+    <TextView
+        android:id="@+id/tvBottomText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COFFEE  •  COMFORT  •  STORIES"
+        android:textColor="#A67C52"
+        android:textSize="9sp"
+        android:fontFamily="@font/poppins_medium"
+        android:letterSpacing="0.12"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/tvTagline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:layout_marginBottom="85dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
