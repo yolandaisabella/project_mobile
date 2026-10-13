@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.yln_lays.databinding.ActivitySplashScreenBinding
+import com.example.yln_lays.project_yolan_3tie.DashboardActivity
 import com.example.yln_lays.project_yolan_3tie.SignInActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -24,7 +25,6 @@ class SplashScreenActivity : AppCompatActivity() {
 
         // SharedPreferences
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
-
         // Cek status login
         val isLogin = sharedPref.getBoolean("isLogin", false)
 
@@ -37,9 +37,27 @@ class SplashScreenActivity : AppCompatActivity() {
         lifecycleScope.launch {
             delay(2000)
 
-            val intent = Intent(this@SplashScreenActivity, SignInActivity::class.java)
+            if (isLogin) {
 
-            startActivity(intent)
+                // Jika sudah login langsung ke Dashboard
+                val intent = Intent(
+                    this@SplashScreenActivity,
+                    DashboardActivity::class.java
+                )
+
+                startActivity(intent)
+
+            } else {
+
+                // Jika belum login masuk ke Sign In
+                val intent = Intent(
+                    this@SplashScreenActivity,
+                    SignInActivity::class.java
+                )
+
+                startActivity(intent)
+            }
+
             finish()
         }
     }
