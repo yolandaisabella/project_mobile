@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.yln_lays.R
 import com.example.yln_lays.databinding.ActivityDashboardBinding
 
@@ -15,110 +16,58 @@ class DashboardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Warna status bar disamakan dengan toolbar
-        window.statusBarColor = Color.parseColor("#4B2C20")
-
-        // Icon status bar menjadi putih
-        window.decorView.systemUiVisibility = 0
-
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Toolbar
+        window.statusBarColor = getColor(R.color.espresso_brown)
+
         setSupportActionBar(binding.toolbar)
 
-        supportActionBar?.apply {
-            title = "Cafe Jambang"
+        supportActionBar?.title = "Cafe Jambang"
+
+        if (savedInstanceState == null) {
+            replaceFragment(HomeFragment())
         }
 
-        // Tombol Web View
-        binding.btnWebView.setOnClickListener {
+        binding.bottomNavView.setOnItemSelectedListener { item ->
 
-            val intent = Intent(
-                this,
-                WebViewActivity::class.java
-            )
+            when (item.itemId) {
 
-            startActivity(intent)
-        }
-
-        // Profile Developer
-        binding.btnDeveloperProfile.setOnClickListener {
-
-            val popupMenu = PopupMenu(
-                this,
-                binding.btnDeveloperProfile
-            )
-
-            popupMenu.menuInflater.inflate(
-                R.menu.developer_menu,
-                popupMenu.menu
-            )
-
-            popupMenu.setOnMenuItemClickListener { item ->
-
-                when (item.itemId) {
-
-                    R.id.menu_profile -> {
-
-                        val intent = Intent(
-                            this,
-                            ProfileActivity::class.java
-                        )
-
-                        startActivity(intent)
-
-                        true
-                    }
-
-                    R.id.menu_settings -> {
-
-                        // Nanti kita isi
-                        true
-                    }
-
-                    R.id.menu_logout -> {
-
-                        val builder = androidx.appcompat.app.AlertDialog.Builder(this)
-
-                        builder.setTitle("Konfirmasi Logout")
-                        builder.setMessage("Apakah kamu yakin ingin logout dari akun ini?")
-
-                        builder.setNegativeButton("Batal") { dialog, _ ->
-                            dialog.dismiss()
-                        }
-
-                        builder.setPositiveButton("Logout") { _, _ ->
-
-                            val sharedPref = getSharedPreferences(
-                                "user_pref",
-                                MODE_PRIVATE
-                            )
-
-                            sharedPref.edit().clear().apply()
-
-                            val intent = Intent(
-                                this,
-                                SignInActivity::class.java
-                            )
-
-                            intent.flags =
-                                Intent.FLAG_ACTIVITY_NEW_TASK or
-                                        Intent.FLAG_ACTIVITY_CLEAR_TASK
-
-                            startActivity(intent)
-                        }
-
-                        builder.show()
-
-                        true
-                    }
-
-                    else -> false
+                R.id.nav_home -> {
+                    replaceFragment(HomeFragment())
+                    supportActionBar?.title = "Cafe Jambang"
+                    true
                 }
-            }
 
-            popupMenu.show()
+                R.id.nav_cart -> {
+                    replaceFragment(CartFragment())
+                    supportActionBar?.title = "Cart"
+                    true
+                }
+
+                R.id.nav_wishlist -> {
+                    replaceFragment(WishlistFragment())
+                    supportActionBar?.title = "Wishlist"
+                    true
+                }
+
+                R.id.nav_user -> {
+                    replaceFragment(UserFragment())
+                    supportActionBar?.title = "Developer Profile"
+                    true
+                }
+
+                else -> false
+            }
         }
+
+        binding.bottomNavView.selectedItemId = R.id.nav_home
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
     }
 }

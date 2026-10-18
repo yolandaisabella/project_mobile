@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="hitam">#FF000000</color>
+    <color name="frothy_white">#F6F2ED</color>
+    <color name="black">#272727</color>
+    <color name="espresso_brown">#4B2C20</color>
+    <color name="creamy_latte">#D5BBA2</color>
+    <color name="roasted_caramel">#A67C52</color>
+    <color name="fresh_mint">#4E8D7C</color>
+    <color name="white">#FFFFFF</color>
+
 </resources>
