@@ -90,6 +90,19 @@
             android:textSize="14sp"
             android:textColor="@color/black" />
 
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Logout"
+            android:textAllCaps="false"
+            android:textSize="15sp"
+            android:textColor="@color/frothy_white"
+            android:backgroundTint="@color/espresso_brown" />
+
+
     </LinearLayout>
 
 </ScrollView>

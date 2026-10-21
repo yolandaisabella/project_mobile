@@ -1,131 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/frothy_white"
-    android:orientation="horizontal"
     tools:context=".project_yolan_3tie.CartFragment">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        tools:ignore="Suspicious0dp">
+    <TextView
+        android:id="@+id/tvEmptyCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Keranjang masih kosong"
+        android:textSize="16sp"
+        android:textColor="@color/roasted_caramel" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Keranjang masih kosong"
-            android:textSize="16sp"
-            android:textColor="@color/roasted_caramel" />
-
-    </FrameLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/creamy_latte" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingHorizontal="16dp"
-        android:background="@color/white">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Voucher"
-            android:textSize="15sp"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gunakan / masukkan kode  ›"
-            android:textSize="12sp"
-            android:textColor="@color/roasted_caramel" />
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/creamy_latte" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingHorizontal="16dp"
-        android:background="@color/white">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Tidak ada produk yang dipilih"
-            android:textSize="13sp"
-            android:textColor="@color/black" />
-
-        <Switch
-            android:id="@+id/switchProduct"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:thumbTint="@color/fresh_mint" />
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/creamy_latte" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingHorizontal="12dp"
-        android:background="@color/white">
-
-        <CheckBox
-            android:id="@+id/checkAll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Semua"
-            android:textColor="@color/black"
-            android:buttonTint="@color/espresso_brown"
-            android:textSize="13sp" />
-
-        <TextView
-            android:id="@+id/tvTotal"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="end"
-            android:paddingEnd="10dp"
-            android:text="Rp0"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            android:textColor="@color/espresso_brown" />
-
-        <Button
-            android:id="@+id/btnCheckout"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:backgroundTint="@color/espresso_brown"
-            android:text="Checkout (0)"
-            android:textAllCaps="false"
-            android:textSize="12sp"
-            android:textColor="@color/frothy_white" />
-
-    </LinearLayout>
-
-</LinearLayout>
+</FrameLayout>
