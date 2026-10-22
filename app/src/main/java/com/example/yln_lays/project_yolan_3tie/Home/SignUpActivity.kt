@@ -1,9 +1,11 @@
 package com.example.yln_lays.project_yolan_3tie.Home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yln_lays.databinding.ActivitySignUpBinding
+import kotlin.jvm.java
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -16,26 +18,28 @@ class SignUpActivity : AppCompatActivity() {
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Tombol Back
         binding.btnBack.setOnClickListener {
             finish()
         }
 
-        // Tombol Create Account
         binding.btnCreateAccount.setOnClickListener {
-
-            val username = binding.etUsername.text.toString()
-            val email = binding.etEmail.text.toString()
+            val nama = binding.etNama.text.toString().trim()
+            val handphone = binding.etHandphone.text.toString().trim()
+            val username = binding.etUsername.text.toString().trim()
             val password = binding.etPassword.text.toString()
-            val confirmPassword = binding.etConfirmPassword.text.toString()
 
-            if (username.isEmpty()) {
-                binding.etUsername.error = "Username harus diisi"
+            if (nama.isEmpty()) {
+                binding.etNama.error = "Nama harus diisi"
                 return@setOnClickListener
             }
 
-            if (email.isEmpty()) {
-                binding.etEmail.error = "Email harus diisi"
+            if (handphone.isEmpty()) {
+                binding.etHandphone.error = "Nomor handphone harus diisi"
+                return@setOnClickListener
+            }
+
+            if (username.isEmpty()) {
+                binding.etUsername.error = "Username harus diisi"
                 return@setOnClickListener
             }
 
@@ -44,18 +48,13 @@ class SignUpActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if (confirmPassword.isEmpty()) {
-                binding.etConfirmPassword.error = "Konfirmasi password harus diisi"
-                return@setOnClickListener
-            }
+            val intent = Intent(this, VerifyOtpActivity::class.java)
+            intent.putExtra("nama", nama)
+            intent.putExtra("handphone", handphone)
+            intent.putExtra("username", username)
+            intent.putExtra("password", password)
 
-            if (password != confirmPassword) {
-                binding.etConfirmPassword.error = "Password tidak sama"
-                return@setOnClickListener
-            }
-
-            // Untuk sementara kembali ke halaman Sign In
-            finish()
+            startActivity(intent)
         }
     }
 }

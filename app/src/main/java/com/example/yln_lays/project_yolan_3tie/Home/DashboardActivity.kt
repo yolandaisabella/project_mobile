@@ -10,7 +10,7 @@ import com.example.yln_lays.R
 import com.example.yln_lays.databinding.ActivityDashboardBinding
 import com.example.yln_lays.project_yolan_3tie.Cart.CartFragment
 import com.example.yln_lays.project_yolan_3tie.User.UserFragment
-import com.example.yln_lays.project_yolan_3tie.Wishlist.WishlistFragment
+import com.example.yln_lays.project_yolan_3tie.Favorit.FavoritFragment
 
 class DashboardActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDashboardBinding
@@ -46,8 +46,8 @@ class DashboardActivity : AppCompatActivity() {
                 }
 
                 R.id.nav_wishlist -> {
-                    replaceFragment(WishlistFragment())
-                    supportActionBar?.title = "Wishlist"
+                    replaceFragment(FavoritFragment())
+                    supportActionBar?.title = "Favorit"
                     true
                 }
 

@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yln_lays.databinding.ActivitySignInBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class SignInActivity : AppCompatActivity() {
 
@@ -17,55 +18,65 @@ class SignInActivity : AppCompatActivity() {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // SharedPreferences
-        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+        val sharedPref =
+            getSharedPreferences("user_pref", MODE_PRIVATE)
 
-        // Tombol Back
         binding.btnBack.setOnClickListener {
             finish()
         }
 
-        // Tombol Sign In
+        binding.tvCreateAccount.setOnClickListener {
+            startActivity(
+                Intent(this, SignUpActivity::class.java)
+            )
+        }
+
         binding.btnSignIn.setOnClickListener {
+            val username =
+                binding.etUsername.text.toString().trim()
+            val password =
+                binding.etPassword.text.toString()
 
-            val username = binding.etUsername.text.toString()
-            val password = binding.etPassword.text.toString()
-
-            // Cek username kosong
             if (username.isEmpty()) {
                 binding.etUsername.error = "Username harus diisi"
                 return@setOnClickListener
             }
 
-            // Cek password kosong
             if (password.isEmpty()) {
                 binding.etPassword.error = "Password harus diisi"
                 return@setOnClickListener
             }
 
-            // Cek username dan password
-            if (username == password) {
+            val registeredUsername =
+                sharedPref.getString("registered_username", null)
+            val registeredPassword =
+                sharedPref.getString("registered_password", null)
 
-                // Simpan status login
-                val editor = sharedPref.edit()
-                editor.putBoolean("isLogin", true)
-                editor.putString("username", username)
-                editor.apply()
+            val loginDefault = username == password
 
-                // Login berhasil → Dashboard
-                val intent = Intent(
-                    this,
-                    DashboardActivity::class.java
+            val loginRegistered =
+                registeredUsername != null &&
+                        registeredPassword != null &&
+                        username == registeredUsername &&
+                        password == registeredPassword
+
+            if (loginDefault || loginRegistered) {
+                sharedPref.edit()
+                    .putBoolean("isLogin", true)
+                    .putString("username", username)
+                    .apply()
+
+                startActivity(
+                    Intent(this, DashboardActivity::class.java)
                 )
 
-                startActivity(intent)
                 finish()
-
             } else {
-
-                // Username dan password berbeda
-                binding.etPassword.error =
-                    "Username dan password harus sama"
+                MaterialAlertDialogBuilder(this)
+                    .setTitle("Login Gagal")
+                    .setMessage("Username atau password salah.")
+                    .setPositiveButton("OK", null)
+                    .show()
             }
         }
     }

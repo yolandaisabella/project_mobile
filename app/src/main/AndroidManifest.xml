@@ -67,6 +67,10 @@
             android:name=".project_yolan_3tie.ProductDetailActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".project_yolan_3tie.Home.VerifyOtpActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
