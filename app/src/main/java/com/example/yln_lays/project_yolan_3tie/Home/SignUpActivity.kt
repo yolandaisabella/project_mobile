@@ -1,8 +1,6 @@
-package com.example.yln_lays.project_yolan_3tie
+package com.example.yln_lays.project_yolan_3tie.Home
 
-import android.graphics.Color
 import android.os.Bundle
-import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yln_lays.databinding.ActivitySignUpBinding

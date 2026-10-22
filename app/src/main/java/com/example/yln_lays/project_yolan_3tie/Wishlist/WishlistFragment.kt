@@ -1,11 +1,12 @@
-package com.example.yln_lays.project_yolan_3tie
+package com.example.yln_lays.project_yolan_3tie.Wishlist
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.example.yln_lays.R
+
 class WishlistFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

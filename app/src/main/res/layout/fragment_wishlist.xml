@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".project_yolan_3tie.WishlistFragment">
+    tools:context=".project_yolan_3tie.Wishlist.WishlistFragment">
 
     <TextView
         android:id="@+id/tvEmptyWishlist"

@@ -8,8 +8,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.yln_lays.databinding.ActivitySplashScreenBinding
-import com.example.yln_lays.project_yolan_3tie.DashboardActivity
-import com.example.yln_lays.project_yolan_3tie.SignInActivity
+import com.example.yln_lays.project_yolan_3tie.Home.DashboardActivity
+import com.example.yln_lays.project_yolan_3tie.Home.SignInActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

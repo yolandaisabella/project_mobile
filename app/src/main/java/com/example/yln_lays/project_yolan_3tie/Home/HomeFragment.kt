@@ -1,4 +1,4 @@
-package com.example.yln_lays.project_yolan_3tie
+package com.example.yln_lays.project_yolan_3tie.Home
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.LinearLayout
 import com.example.yln_lays.R
 class HomeFragment : Fragment() {
 

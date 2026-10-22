@@ -14,23 +14,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YLNLays">
         <activity
-            android:name=".project_yolan_3tie.WebViewActivity"
+            android:name=".project_yolan_3tie.Home.WebViewActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".project_yolan_3tie.DashboardActivity"
+            android:name=".project_yolan_3tie.Home.DashboardActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".project_yolan_3tie.SignUpActivity"
+            android:name=".project_yolan_3tie.Home.SignUpActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".project_yolan_3tie.SignInActivity"
+            android:name=".project_yolan_3tie.Home.SignInActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".project_yolan_3tie.GetStartedActivity"
+            android:name=".project_yolan_3tie.Home.GetStartedActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
@@ -56,7 +56,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".project_yolan_3tie.ProfileActivity"
+            android:name=".project_yolan_3tie.Home.ProfileActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity

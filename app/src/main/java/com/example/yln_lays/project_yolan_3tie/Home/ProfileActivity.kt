@@ -1,4 +1,4 @@
-package com.example.yln_lays.project_yolan_3tie
+package com.example.yln_lays.project_yolan_3tie.Home
 
 import android.graphics.Color
 import android.os.Bundle

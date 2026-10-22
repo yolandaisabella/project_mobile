@@ -1,17 +1,16 @@
-package com.example.yln_lays.project_yolan_3tie
+package com.example.yln_lays.project_yolan_3tie.Home
 
-import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.PopupMenu
-import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.yln_lays.R
 import com.example.yln_lays.databinding.ActivityDashboardBinding
+import com.example.yln_lays.project_yolan_3tie.Cart.CartFragment
+import com.example.yln_lays.project_yolan_3tie.User.UserFragment
+import com.example.yln_lays.project_yolan_3tie.Wishlist.WishlistFragment
 
 class DashboardActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDashboardBinding

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/frothy_white"
-    tools:context=".project_yolan_3tie.CartFragment">
+    tools:context=".project_yolan_3tie.Cart.CartFragment">
 
     <TextView
         android:id="@+id/tvEmptyCart"

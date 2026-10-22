@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F6F2ED"
-    tools:context=".project_yolan_3tie.SignUpActivity">
+    tools:context=".project_yolan_3tie.Home.SignUpActivity">
 
     <ImageButton
         android:id="@+id/btnBack"

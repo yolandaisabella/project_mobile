@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.yln_lays.databinding.ActivityMainBinding
-import com.example.yln_lays.project_yolan_3tie.GetStartedActivity
+import com.example.yln_lays.project_yolan_3tie.Home.GetStartedActivity
 
 class MainActivity : AppCompatActivity() {
 

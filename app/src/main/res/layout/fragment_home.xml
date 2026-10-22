@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/frothy_white"
-    tools:context=".project_yolan_3tie.HomeFragment">
+    tools:context=".project_yolan_3tie.Home.HomeFragment">
 
     <ImageView
         android:id="@+id/imgLogo"

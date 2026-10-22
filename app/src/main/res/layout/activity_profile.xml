@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F6F2ED"
-    tools:context=".project_yolan_3tie.ProfileActivity">
+    tools:context=".project_yolan_3tie.Home.ProfileActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"

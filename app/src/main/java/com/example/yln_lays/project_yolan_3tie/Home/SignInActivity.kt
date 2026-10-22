@@ -1,4 +1,4 @@
-package com.example.yln_lays.project_yolan_3tie
+package com.example.yln_lays.project_yolan_3tie.Home
 
 import android.content.Intent
 import android.os.Bundle
