@@ -26,6 +26,10 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
+            android:name=".project_yolan_3tie.Home.SignUpAccountActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".project_yolan_3tie.Home.SignInActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
@@ -60,15 +64,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".project_yolan_3tie.CafeStore"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".project_yolan_3tie.ProductDetailActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".project_yolan_3tie.Home.VerifyOtpActivity"
+            android:name=".project_yolan_3tie.Home.VerifikasiActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
