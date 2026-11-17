@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import com.example.yln_lays.databinding.ActivitySplashScreenBinding
 import com.example.yln_lays.project_yolan_3tie.Home.DashboardActivity
 import com.example.yln_lays.project_yolan_3tie.Home.SignInActivity
+import com.example.yln_lays.project_yolan_3tie.Onboarding.OnboardingActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -23,9 +24,9 @@ class SplashScreenActivity : AppCompatActivity() {
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // SharedPreferences
+        // Periksa status login. Jika belum login, onboarding selalu ditampilkan
+        // sebelum pengguna masuk ke halaman Sign In.
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
-        // Cek status login
         val isLogin = sharedPref.getBoolean("isLogin", false)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -37,26 +38,15 @@ class SplashScreenActivity : AppCompatActivity() {
         lifecycleScope.launch {
             delay(2000)
 
-            if (isLogin) {
-
-                // Jika sudah login langsung ke Dashboard
-                val intent = Intent(
-                    this@SplashScreenActivity,
-                    DashboardActivity::class.java
-                )
-
-                startActivity(intent)
-
+            val destination = if (isLogin) {
+                DashboardActivity::class.java
             } else {
-
-                // Jika belum login masuk ke Sign In
-                val intent = Intent(
-                    this@SplashScreenActivity,
-                    SignInActivity::class.java
-                )
-
-                startActivity(intent)
+                // Pengguna yang belum login melihat 3 halaman Onboarding
+                // setiap kali aplikasi dibuka.
+                OnboardingActivity::class.java
             }
+
+            startActivity(Intent(this@SplashScreenActivity, destination))
 
             finish()
         }

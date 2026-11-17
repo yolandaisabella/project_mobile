@@ -13,6 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.YLNLays">
+        <activity android:name=".project_yolan_3tie.Onboarding.OnboardingActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".project_yolan_3tie.Home.WebViewActivity"
             android:exported="false"
@@ -65,6 +68,9 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".project_yolan_3tie.Home.VerifikasiActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".project_yolan_3tie.Produk.ProductDetailActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

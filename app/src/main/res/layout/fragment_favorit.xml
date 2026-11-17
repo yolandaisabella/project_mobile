@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".project_yolan_3tie.Favorit.FavoritFragment">
+    android:background="@color/frothy_white">
 
     <TextView
         android:id="@+id/tvEmptyWishlist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Halaman favorit masih kosong"
-        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="Favorit masih kosong\nTekan ikon hati pada menu yang kamu suka."
+        android:textAlignment="center"
+        android:textSize="15sp"
         android:textColor="@color/roasted_caramel" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFavorites"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp" />
 
 </FrameLayout>

@@ -11,6 +11,7 @@ import com.example.yln_lays.databinding.ActivityDashboardBinding
 import com.example.yln_lays.project_yolan_3tie.Cart.CartFragment
 import com.example.yln_lays.project_yolan_3tie.User.UserFragment
 import com.example.yln_lays.project_yolan_3tie.Favorit.FavoritFragment
+import com.example.yln_lays.project_yolan_3tie.Kopi.KopiFragment
 
 class DashboardActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDashboardBinding
@@ -39,6 +40,12 @@ class DashboardActivity : AppCompatActivity() {
                     true
                 }
 
+                R.id.nav_kopi -> {
+                    replaceFragment(KopiFragment.newInstance("Makanan"))
+                    supportActionBar?.title = "Menu"
+                    true
+                }
+
                 R.id.nav_cart -> {
                     replaceFragment(CartFragment())
                     supportActionBar?.title = "Cart"
@@ -62,6 +69,35 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         binding.bottomNavView.selectedItemId = R.id.nav_home
+    }
+
+    fun openCoffeeMenu() { openMenu("Minuman") }
+
+    fun openMenu(category: String) {
+        binding.bottomNavView.selectedItemId = R.id.nav_kopi
+        supportActionBar?.title = "Menu"
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, KopiFragment.newInstance(category))
+            .commit()
+        invalidateOptionsMenu()
+    }
+
+    fun openCart() {
+        binding.bottomNavView.selectedItemId = R.id.nav_cart
+    }
+
+    fun openFavorites() { binding.bottomNavView.selectedItemId = R.id.nav_wishlist }
+
+    fun refreshCartBadge() {
+        val badge = binding.bottomNavView.getOrCreateBadge(R.id.nav_cart)
+        val count = com.example.yln_lays.project_yolan_3tie.Produk.ShopRepository.cartCount()
+        badge.isVisible = count > 0
+        badge.number = count
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (::binding.isInitialized) refreshCartBadge()
     }
 
     private fun replaceFragment(fragment: Fragment) {
