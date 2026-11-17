@@ -11,6 +11,7 @@ import com.example.yln_lays.R
 import com.example.yln_lays.databinding.FragmentFavoritBinding
 import com.example.yln_lays.project_yolan_3tie.Produk.ProductAdapter
 import com.example.yln_lays.project_yolan_3tie.Produk.ProductDetailActivity
+import com.example.yln_lays.project_yolan_3tie.Produk.ShopRepository
 
 class FavoritFragment : Fragment() {
     private var _binding: FragmentFavoritBinding? = null

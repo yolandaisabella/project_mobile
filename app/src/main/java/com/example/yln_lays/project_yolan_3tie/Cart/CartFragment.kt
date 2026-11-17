@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.yln_lays.R
 import com.example.yln_lays.databinding.FragmentCartBinding
 import com.example.yln_lays.project_yolan_3tie.Home.DashboardActivity
+import com.example.yln_lays.project_yolan_3tie.Produk.ShopRepository
 
 class CartFragment : Fragment() {
     private var _binding: FragmentCartBinding? = null

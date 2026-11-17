@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="3dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <!-- Gambar Produk -->
+        <ImageView
+            android:id="@+id/ivProductImage"
+            android:layout_width="match_parent"
+            android:layout_height="132dp"
+            android:background="@drawable/bg_coffee_icon"
+            android:contentDescription="Foto menu"
+            android:scaleType="centerCrop" />
+
+        <!-- Nama Produk -->
+        <TextView
+            android:id="@+id/tvProductName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Nama Produk"
+            android:textColor="@color/espresso_brown"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <!-- Deskripsi Produk -->
+        <TextView
+            android:id="@+id/tvProductDescription"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:text="Deskripsi produk"
+            android:textColor="@color/roasted_caramel"
+            android:textSize="10sp" />
+
+        <!-- Harga Produk -->
+        <TextView
+            android:id="@+id/tvProductPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rp0"
+            android:textColor="@color/espresso_brown"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <!-- Tombol Keranjang & Favorit -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnProductAdd"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/espresso_brown"
+                android:text="+ Keranjang"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+
+            <ImageButton
+                android:id="@+id/btnProductFavorite"
+                android:layout_width="42dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/bg_coffee_icon"
+                android:clickable="true"
+                android:contentDescription="Tambahkan ke favorit"
+                android:focusable="true"
+                android:padding="9dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_unfavorit" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
